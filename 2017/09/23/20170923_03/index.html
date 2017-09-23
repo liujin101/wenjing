@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>文井の博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="图片预览功能–兼容IE2017/9/23 9:26:01   功能要求以及遇到的几个问题1、用户上传图片前预览图片，确定是否选取正确，此时可以对不满意的图片进行删除。2、要求兼容IE低版本浏览器，因此必须使用滤镜。3、由于后台在设计时是没有考虑兼容性的，因此使用的是HTML5中的formDate对象来作为数据传输的传媒，IE9及以下版本无法传输数据至后台。4、IE浏览器基于安全性的考虑禁止使用Ja">
+<meta property="og:type" content="article">
+<meta property="og:title" content="文井の博客">
+<meta property="og:url" content="https://github.com/liujin101/wenjing.git/2017/09/23/20170923_03/index.html">
+<meta property="og:site_name" content="文井の博客">
+<meta property="og:description" content="图片预览功能–兼容IE2017/9/23 9:26:01   功能要求以及遇到的几个问题1、用户上传图片前预览图片，确定是否选取正确，此时可以对不满意的图片进行删除。2、要求兼容IE低版本浏览器，因此必须使用滤镜。3、由于后台在设计时是没有考虑兼容性的，因此使用的是HTML5中的formDate对象来作为数据传输的传媒，IE9及以下版本无法传输数据至后台。4、IE浏览器基于安全性的考虑禁止使用Ja">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-09-23T12:42:06.896Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="文井の博客">
+<meta name="twitter:description" content="图片预览功能–兼容IE2017/9/23 9:26:01   功能要求以及遇到的几个问题1、用户上传图片前预览图片，确定是否选取正确，此时可以对不满意的图片进行删除。2、要求兼容IE低版本浏览器，因此必须使用滤镜。3、由于后台在设计时是没有考虑兼容性的，因此使用的是HTML5中的formDate对象来作为数据传输的传媒，IE9及以下版本无法传输数据至后台。4、IE浏览器基于安全性的考虑禁止使用Ja">
+  
+    <link rel="alternate" href="/atom.xml" title="文井の博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/wenjing/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/wenjing/" id="logo">文井の博客</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/wenjing/" id="subtitle">时光荏苒须当惜，风雨阴晴勤值历。</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/wenjing/">Home</a>
+        
+          <a class="main-nav-link" href="/wenjing/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://github.com/liujin101/wenjing.git"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-20170923_03" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/wenjing/2017/09/23/20170923_03/" class="article-date">
+  <time datetime="2017-09-23T12:42:06.880Z" itemprop="datePublished">2017-09-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="图片预览功能–兼容IE"><a href="#图片预览功能–兼容IE" class="headerlink" title="图片预览功能–兼容IE"></a>图片预览功能–兼容IE</h1><p>2017/9/23 9:26:01 </p>
+<hr>
+<h2 id="功能要求以及遇到的几个问题"><a href="#功能要求以及遇到的几个问题" class="headerlink" title="功能要求以及遇到的几个问题"></a>功能要求以及遇到的几个问题</h2><p>1、用户上传图片前预览图片，确定是否选取正确，此时可以对不满意的图片进行删除。<br>2、要求兼容IE低版本浏览器，因此必须使用滤镜。<br>3、由于后台在设计时是没有考虑兼容性的，因此使用的是HTML5中的formDate对象来作为数据传输的传媒，IE9及以下版本无法传输数据至后台。<br>4、IE浏览器基于安全性的考虑禁止使用JavaScript对input元素进行模拟点击事件的操作，因此在利用BootScript框架中的美化文件上传样式时，在IE浏览器中上传的文件格式错误。<br>5、最开始接手项目时没有与后台进行沟通交流，选取的是百度开发团队维护的一个图片预览上传插件（Webuploader）进行开发，预览功能可以很好的实现，但是由于Webuploader采取的是将图片转换为Base64编码格式的数据后再在页面上显示出来，后台也是采用PHP来接收数据，因此完全是不能用，只好丢掉重来。</p>
+<h2 id="最终采用的代码以及注释"><a href="#最终采用的代码以及注释" class="headerlink" title="最终采用的代码以及注释"></a>最终采用的代码以及注释</h2><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;UTF-8&quot;&gt;
+        &lt;title&gt;&lt;/title&gt;
+        &lt;style type=&quot;text/css&quot;&gt;
+   #add-img{
+            background: #0094FF;
+            color: white;
+            border: none;
+            outline: none;
+            width: 100px;
+            line-height: 24px;
+            position: absolute;
+            bottom: 5px;
+            left: 320px;
+            border-radius: 10px;
+        }
+        .click-check-img{
+            border-radius: 10px;
+            background: #0094FF;
+            color: white;
+            border: none;
+            outline: none;
+            width: 100px;
+            line-height: 24px;
+        }
+        #add-img:hover{
+            cursor: pointer;
+            background: #0084ff;
+        }
+        .preview{
+
+            width: 120px;
+            height:180px;
+            display: inline-block;
+            position: relative;
+            margin: 0 20px;
+
+        }        
+        #uploadfiledemoform{
+            border: 1px solid #CCCCCC;
+            border-radius: 5px;
+            width: 740px;
+            padding-left: 60px;
+            padding-bottom: 25px;
+            margin: auto;
+            margin-bottom: 10px;
+            position: relative;
+            margin-top: 10px;
+            padding-top: 10px;
+        }
+        .preview .del{
+            display: none;
+            width: 20px;
+            height: 20px;
+            border: none;
+            outline: none;
+            position: absolute;
+            right: 0;
+            top: 0;
+            background: url(icons.png) top right;
+        }
+        .del:hover{
+            cursor: pointer;
+        }
+        .file{                        
+
+            opacity: 0;
+            position: absolute;
+            font-size: 16px;
+            width: 110px;
+            /*使用滤镜解决ie浏览器不支持file按钮的opacity*/
+            filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);            
+        }
+        .file:hover{
+            cursor: pointer;
+        }
+        #uploadfiledemoform img{
+            margin-bottom: 5px;
+        }
+&lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;form enctype=&quot;multipart/form-data&quot; id=&quot;uploadfiledemoform&quot; method=&quot;post&quot;&gt;
+    &lt;div class=&quot;preview&quot;&gt;
+        &lt;input type=&quot;button&quot; class=&quot;del&quot; /&gt;
+        &lt;div id=&quot;imgdiv&quot;&gt;&lt;img id=&quot;imgShow&quot; width=&quot;100&quot; height=&quot;100&quot; src=&quot;&quot; /&gt;&lt;/div&gt;
+        &lt;input type=&quot;file&quot; class=&quot;file&quot; id=&quot;up_img&quot; name=&quot;file&quot; /&gt;
+        &lt;input type=&quot;button&quot; class=&quot;btn btn-primary click-check-img&quot;&quot; value=&quot;点击选择图片&quot; /&gt;
+
+    &lt;/div&gt;
+
+    &lt;input id=&apos;add-img&apos; class=&quot;btn btn-primary&quot; type=&quot;button&quot; value=&quot;继续添加&quot; /&gt;
+
+&lt;/form&gt;
+    &lt;/body&gt;
+    &lt;script src=&quot;jquery-1.9.1.min.js&quot; type=&quot;text/javascript&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+
+    &lt;script&gt;
+
+ $(function(){
+//     *work:图片预览方法
+var uploadPreview = function(setting) {
+
+    var _self = this;
+
+    _self.IsNull = function(value) {
+        if (typeof (value) == &quot;function&quot;) { return false; }
+        if (value == undefined || value == null || value == &quot;&quot; || value.length == 0) {
+            return true;
+        }
+        return false;
+    }
+
+    _self.DefautlSetting = {
+        UpBtn: &quot;&quot;,
+        DivShow: &quot;&quot;,
+        ImgShow: &quot;&quot;,
+        Width: 100,
+        Height: 100,
+        ImgType: [&quot;gif&quot;, &quot;jpeg&quot;, &quot;jpg&quot;, &quot;bmp&quot;, &quot;png&quot;],
+        ErrMsg: &quot;选择文件错误,图片类型必须是(gif,jpeg,jpg,bmp,png)中的一种&quot;,
+        callback: function() { }
+    };
+
+    _self.Setting = {
+        UpBtn: _self.IsNull(setting.UpBtn) ? _self.DefautlSetting.UpBtn : setting.UpBtn,
+        DivShow: _self.IsNull(setting.DivShow) ? _self.DefautlSetting.DivShow : setting.DivShow,
+        ImgShow: _self.IsNull(setting.ImgShow) ? _self.DefautlSetting.ImgShow : setting.ImgShow,
+        Width: _self.IsNull(setting.Width) ? _self.DefautlSetting.Width : setting.Width,
+        Height: _self.IsNull(setting.Height) ? _self.DefautlSetting.Height : setting.Height,
+        ImgType: _self.IsNull(setting.ImgType) ? _self.DefautlSetting.ImgType : setting.ImgType,
+        ErrMsg: _self.IsNull(setting.ErrMsg) ? _self.DefautlSetting.ErrMsg : setting.ErrMsg,
+        callback: _self.IsNull(setting.callback) ? _self.DefautlSetting.callback : setting.callback
+    };
+
+    _self.getObjectURL = function(file) {
+        var url = null;
+        if (window.createObjectURL != undefined) {
+            url = window.createObjectURL(file);
+        } else if (window.URL != undefined) {
+            url = window.URL.createObjectURL(file);
+        } else if (window.webkitURL != undefined) {
+            url = window.webkitURL.createObjectURL(file);
+        }
+        return url;
+    }
+
+    _self.Bind = function() {
+        document.getElementById(_self.Setting.UpBtn).onchange = function() {
+            $(this).prev().hover(function(){
+                $(this).prev().show();
+            });
+
+            if (this.value) {
+                if (!RegExp(&quot;\.(&quot; + _self.Setting.ImgType.join(&quot;|&quot;) + &quot;)$&quot;, &quot;i&quot;).test(this.value.toLowerCase())) {
+                    alert(_self.Setting.ErrMsg);
+                    this.value = &quot;&quot;;
+                    return false;
+                }
+                if (navigator.userAgent.indexOf(&quot;MSIE&quot;) &gt; -1) {
+                    try {
+                        document.getElementById(_self.Setting.ImgShow).src = _self.getObjectURL(this.files[0]);
+                    } catch (e) {
+                        var div = document.getElementById(_self.Setting.DivShow);
+                        this.select();
+                        top.parent.document.body.focus();
+                        var src = document.selection.createRange().text;
+                        document.selection.empty();
+                        document.getElementById(_self.Setting.ImgShow).style.display = &quot;none&quot;;
+                        div.style.filter = &quot;progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale)&quot;;
+                        div.style.width = _self.Setting.Width + &quot;px&quot;;
+                        div.style.height = _self.Setting.Height + &quot;px&quot;;
+                        div.filters.item(&quot;DXImageTransform.Microsoft.AlphaImageLoader&quot;).src = src;
+                    }
+                } else {
+                    document.getElementById(_self.Setting.ImgShow).src = _self.getObjectURL(this.files[0]);
+                }
+                _self.Setting.callback();
+            }
+        }
+    }
+
+    _self.Bind();
+}
+     //图片预览方法结束    
+     //用户进入页面后实例化：
+     new uploadPreview({ UpBtn: &quot;up_img&quot;, DivShow: &quot;imgdiv&quot;, ImgShow: &quot;imgShow&quot; });
+     //用户选取第一个文件上传按钮后自动生成下一个按钮：
+     var $preview = $(&quot;.preview&quot;).last().children(&quot;div&quot;).children(&quot;img&quot;);
+     var imgDivId = 0;
+     var imgShowId = 0;
+     var fileId = 0;
+     var count = 1;
+
+     $(document).on(&quot;click&quot;,&quot;.preview .del&quot;,function(){                             
+            $(this).parent().remove();
+            count--;
+            //当用户删除掉所有选择的图片时再生成一个空白的选择按钮并为该按钮添加图片预览功能：
+            if(count == 0){
+                $(&apos;&lt;div class=&quot;preview&quot;&gt;&lt;input type=&quot;button&quot; class=&quot;del&quot; /&gt;&lt;div id=&quot;imgdiv&apos;+ imgDivId +&apos;&quot;&gt;&lt;img id=&quot;imgShow&apos;+ imgShowId +&apos;&quot; width=&quot;100&quot; height=&quot;100&quot; /&gt;&lt;/div&gt;&lt;input  class=&quot;file&quot;  name=&quot;file&quot; type=&quot;file&quot; id=&quot;up_img&apos;+ fileId +&apos;&quot; /&gt;&lt;input type=&quot;button&quot; class=&quot;btn btn-primary click-check-img&quot; onclick=&quot;$(this).prev().click();&quot; value=&quot;点击选择图片&quot; /&gt;&lt;/div&gt;&apos;)
+         .appendTo($(&quot;#uploadfiledemoform&quot;));
+         //为该按钮调用uploadPreview方法：
+         new uploadPreview({ UpBtn: &quot;up_img&quot;+ imgDivId +&quot;&quot;, DivShow: &quot;imgdiv&quot;+ imgShowId +&quot;&quot;, ImgShow: &quot;imgShow&quot;+ fileId +&quot;&quot; });
+         imgDivId++;
+         imgShowId++;
+         fileId++;
+         count++;
+
+            }
+     });
+
+     $(&quot;#add-img&quot;).click(function(){
+         $preview = $(&quot;.preview&quot;).last().children(&quot;div&quot;).children(&quot;img&quot;);        
+         if(count&lt;=7){                  
+         $(&apos;&lt;div class=&quot;preview&quot;&gt;&lt;input type=&quot;button&quot; class=&quot;del&quot; /&gt;&lt;div id=&quot;imgdiv&apos;+ imgDivId +&apos;&quot;&gt;&lt;img id=&quot;imgShow&apos;+ imgShowId +&apos;&quot; width=&quot;100&quot; height=&quot;100&quot; /&gt;&lt;/div&gt;&lt;input  class=&quot;file&quot;  name=&quot;file&quot; type=&quot;file&quot; id=&quot;up_img&apos;+ fileId +&apos;&quot; /&gt;&lt;input type=&quot;button&quot; class=&quot;btn btn-primary click-check-img&quot; onclick=&quot;$(this).prev().click();&quot; value=&quot;点击选择图片&quot; /&gt;&lt;/div&gt;&apos;)
+         .appendTo($preview.parent().parent().parent());
+         //为该按钮调用uploadPreview方法：
+         new uploadPreview({ UpBtn: &quot;up_img&quot;+ imgDivId +&quot;&quot;, DivShow: &quot;imgdiv&quot;+ imgShowId +&quot;&quot;, ImgShow: &quot;imgShow&quot;+ fileId +&quot;&quot; });
+         imgDivId++;
+         imgShowId++;
+         fileId++;
+         count++;
+         }
+         else 
+         if(count&gt;7){
+             alert(&quot;最多只能选择八张图片&quot;);            
+         }
+     });
+     //页面方法结束
+ })
+&lt;/script&gt;
+&lt;/html&gt;
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://github.com/liujin101/wenjing.git/2017/09/23/20170923_03/" data-id="cj7xb1scz0003ygqhmkc9hhvw" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/wenjing/2017/09/23/20170923_02/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Récent</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/wenjing/2017/09/23/20170923_08/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/wenjing/archives/2017/09/">September 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Articles récents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/wenjing/2017/09/23/20170923_04/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/wenjing/2017/09/23/20170923_05/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/wenjing/2017/09/23/20170923_01/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/wenjing/2017/09/23/20170923_02/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/wenjing/2017/09/23/20170923_03/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 文井<br>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/wenjing/" class="mobile-nav-link">Home</a>
+  
+    <a href="/wenjing/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/wenjing/fancybox/jquery.fancybox.css">
+  <script src="/wenjing/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/wenjing/js/script.js"></script>
+
+  </div>
+</body>
+</html>
